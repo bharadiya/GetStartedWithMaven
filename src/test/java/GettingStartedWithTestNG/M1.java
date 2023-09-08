@@ -1,5 +1,7 @@
 package GettingStartedWithTestNG;
 
+import org.testng.Assert;
+import org.testng.SkipException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -41,9 +43,10 @@ public class M1 {
 	@Test(priority = 2)
 	public static void t5() {
 		System.out.println("t5");
+		Assert.fail();
 	}
 
-	@Test(priority = -9)
+	@Test(dependsOnMethods = { "t5" })
 	public static void t6() {
 		System.out.println("t6");
 	}

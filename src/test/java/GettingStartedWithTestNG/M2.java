@@ -31,7 +31,7 @@ public class M2 {
 		System.out.println("t11");
 	}
 
-	@Test(enabled = false)
+	@Test
 
 	public static void t12() {
 		System.out.println("t12");
